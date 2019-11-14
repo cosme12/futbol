@@ -5,4 +5,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 
 def index_view(request):
+    return render(request, 'login.html')
+
+
+def office_view(request):
     return render(request, 'index.html')
