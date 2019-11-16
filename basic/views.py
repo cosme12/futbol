@@ -11,12 +11,11 @@ from .forms import LoginForm
 # Create your views here.
 
 
-def index_view(request):
-    return render(request, 'login.html')
-
-
 def office_view(request):
-    return render(request, 'index.html')
+    if request.user.is_authenticated:
+        return render(request, 'index.html')
+    else:
+        return HttpResponseRedirect('/login')
 
 
 class SignUp(generic.CreateView):
