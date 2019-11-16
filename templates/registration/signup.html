@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="content-wrap">
+  <div id="sidebar" style="display: block;">
+    <h1>Sign in</h1>
+    <div class="left-box">
+
+    </div>
+  </div>
+
+  <div id="main">
+    <h1>Sign up</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+  </form>
+  </div>
+
+</div>
+
+{% endblock %}

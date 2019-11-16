@@ -20,6 +20,11 @@
 4. Repeat as necessary
 
 
+### Create superuser
+
+```>python manage.py createsuperuser```
+
+
 ## Production
 
 ### Static files production
