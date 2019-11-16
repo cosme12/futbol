@@ -7,22 +7,12 @@
   <div id="sidebar" style="display: block;">
     <h1>Sign in</h1>
     <div class="left-box">
-        <form action="" method="post" id="login_form" class="imtext">
-        <p>
-        <label for="username">Email / username:</label><input type="text" name="username" id="username"><br>
-        <label for="password">Password:</label><input type="password" name="password" id="password">
-        </p>
-        <p>
-        <input type="submit" value="Login">
-        </p>
-        <p><b><a href="http://www.opensoccer.org/passwort_vergessen.php">Forgot password?</a></b></p>
-        </form>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="enviar">
+            <p>{{ form }}</p>
+            <p><input type="submit" value="Login"></p>
+            <p><b><a href="http://www.opensoccer.org/passwort_vergessen.php">Forgot password?</a></b></p>
         </form>
-        <a href="{% url 'logout' %}">logout</a>
     </div>
       <h1>Demo Account {{ username }}</h1>
       <div class="left-box">
@@ -35,11 +25,6 @@
     <p><strong>Du bist der Trainer. Du bist der Manager. Du hast alles in der Hand!</strong></p>
     <p>+ Übernimm Deinen eigenen Fußballklub!<br>+ jeden Tag 1 bis 4 Spiele (Liga + Pokal)<br>+ einfach im Browser managen — keine Installation<br>+ garantiert kostenlos — auch in Zukunft<br>+ keine Premium-Accounts — gleiche Chancen für alle<br>+ schneller Einstieg<br>+ langfristiger Spielspaß<br>+ tolle Community<br>+ wenig Zeitaufwand<br>+ LIVE-Spiele — spannend bis zum Ende<br>+ Urlaubsvertretung durch den Computer (10-30 Tage)</p>
     <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-  </form>
   </div>
 
 </div>
