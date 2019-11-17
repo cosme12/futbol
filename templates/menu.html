@@ -1,17 +1,40 @@
 <div id="menu">
     <ul id="nav">
         {% if user.is_authenticated %}
-            <li {% if request.path == '/' %}id="current"{% endif %}><a href="#">Office</a>
+            <li {% if request.path == '/' %}id="current"{% endif %}><a href="#">Club</a>
                 <ul>
+                    <li><a href="/">Office</a></li>
                     <li><a>Notifications</a></li>
-                    <li><a>asd</a></li>
-                    <li><a>asd</a></li>
+                    <li><a>Settings</a></li>
                 </ul>
             </li>
-            <li><a href="#">Archives</a></li>
-            <li><a href="#">Downloads</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Support</a></li>
+            <li><a href="#">Ranking</a></li>
+            <li><a href="#">Team</a>
+                <ul>
+                    <li><a>Formation</a></li>
+                    <li><a>Squad</a></li>
+                    <li><a>Development</a></li>
+                    <li><a>Calendar</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Season</a>
+                <ul>
+                    <li><a>League</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Finances</a>
+                <ul>
+                    <li><a>League</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Support</a>
+                <ul>
+                    <li><a>Support team</a></li>
+                    <li><a>Tips</a></li>
+                    <li><a>Forums</a></li>
+                    <li><a>Rules</a></li>
+                </ul>
+            </li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
         {% else %}
             <li><a href="#">Home</a></li>
