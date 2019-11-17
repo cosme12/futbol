@@ -1,0 +1,21 @@
+<div id="menu">
+    <ul id="nav">
+        {% if user.is_authenticated %}
+            <li id="current"><a href="#">Office</a>
+                <ul>
+                    <li><a>Notifications</a></li>
+                    <li><a>asd</a></li>
+                    <li><a>asd</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Archives</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Demo Account</a></li>
+        {% endif %}
+    </ul>
+</div>
