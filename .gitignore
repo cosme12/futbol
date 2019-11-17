@@ -108,3 +108,4 @@ workspace.xml
 tasks.xml
 
 .idea/*
+basic/migrations/*
