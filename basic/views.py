@@ -21,9 +21,10 @@ def office_view(request):
     else:
         return HttpResponseRedirect('/login')
     '''
-    team = Team.objects.get(id=request.user.id)
+    #team = Team.objects.get(id=request.user.id)
+    team = Team.objects.filter(id=request.user.id).first()
     return render(request, 'office.html',
-                  {"team": team.name,
+                  {"team": team,
                    })
 
 
