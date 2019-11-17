@@ -15,8 +15,8 @@
 
 
 1. Create or update a model
-2. Run ```./manage.py makemigrations <app_name>```
-3. Run ```./manage.py migrate``` to migrate everything or ```./manage.py migrate <app_name>``` to migrate an individual app
+2. Run ```python manage.py makemigrations <app_name>```
+3. Run ```python manage.py migrate``` to migrate everything or ```./manage.py migrate <app_name>``` to migrate an individual app
 4. Repeat as necessary
 
 
