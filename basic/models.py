@@ -9,7 +9,8 @@ class TodoItem(models.Model):
 
 
 class Team(models.Model):
-    pass
+    name = models.TextField(null=True)
+    money = models.IntegerField(default=0)
 
 
 class CustomUser(AbstractUser):
