@@ -1,0 +1,23 @@
+<div id="sidebar">
+    <div id="top_box_nav">
+        <a href="/wio.php" class="blue">Who is online?</a>
+        <a href="/posteingang.php" class="lightgrey">Inbox (0 unread)</a>
+        <a href="/freunde.php" class="red">Friends (0 requests)</a>
+        <a href="/chat.php" class="grey">Chat (0 online)</a>
+        <a href="/manager.php?id=5" class="green">My profile</a>
+    </div>
+    {% if user.is_staff %}
+        <h1>Support Menu</h1>
+        <div class="left-box navBlockLinks">
+            <a href="/multiAccounts.php">Multi-Accounts</a>
+            <a href="/chat_reports.php">Chat-Reports</a>
+            <a href="/geloeschteAccounts.php">Gelöschte Accounts</a>
+            <a href="/neueAccounts.php">Neue Accounts</a>
+            <a href="/gruendeFuerLoeschung.php">Gründe für Löschung</a>
+            <a href="/sanktionen.php">Kontrollzentrum</a>
+        </div>
+    {% endif %}
+
+    <h1>Next Games</h1>
+    <div class="left-box navBlockLinks matchList"></div>
+</div>

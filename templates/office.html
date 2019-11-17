@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="content-wrap">
+    {% include 'sidebar.html' %}
+
+    <div id="main">
+		<h1>Your club: Sheffield Athletic</h1>
+    <div style="clear:both;"></div>
+	<table>
+	<thead>
+	<tr class="odd">
+	<th scope="col">Area</th>
+	<th scope="col">Club information</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr><td>Liga</td><td>1. Platz</td></tr>
+	<tr class="odd"><td>RKP</td><td>1.200 Points</td></tr>
+	<tr><td>Bank balance</td><td>50.000.000 €</td></tr>
+	<tr><td>Verfügbares Geld</td><td>50.000.000 €</td></tr>
+	<tr class="odd"><td>Aufstellungsstärke</td><td><img src="/images/balken/0.png" alt=""></td></tr>
+	<tr><td>Kaderstärke</td><td><img src="/images/balken/0.png" alt=""></td></tr>
+	<tr><td colspan="2"><img style="vertical-align: middle;" alt="Systemzeit" src="{% static 'images/clock.gif' %}" width="16"> Saison 185 · Spieltag 1 · 17.11.2019, 04:30 Uhr</td></tr>
+	</tbody>
+	</table>
+		<h1>Kürzeste Verträge</h1>
+    <p>Die Verträge der folgenden Spieler laufen als Nächstes aus. Du solltest sie rechtzeitig verlängern, damit die
+        Spieler bei Deinem Verein bleiben:</p>
+	<table>
+	<thead>
+	<tr class="odd">
+	<th scope="col">Spieler</th>
+	<th scope="col">Alter</th>
+	<th scope="col">Vertrag bis</th>
+	<th scope="col">Gehalt</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+  <td class="link"><a href="/spieler.php?id=f">Konstantinos Lund </a></td>
+  <td>26</td>
+  <td>03.07.2014</td>
+  <td>321.069 €</td>
+</tr>
+<tr class="odd">
+  <td class="link"><a href="/spieler.php?id=23fa67136265512f6362cf900fe40839">Guido Auer</a></td>
+  <td>27</td>
+  <td>03.07.2014</td>
+  <td>43.429 €</td>
+</tr>
+</tbody>
+</table>
+<h1>Suche nach Teams oder Managern</h1>
+<form action="/index.php" method="get" accept-charset="utf-8">
+  <p><input type="text" name="sucheName" style="width:200px" value=""> <input type="submit" value="Suchen"></p>
+</form>
+<h1>Fairplay und Multi-Accounts</h1>
+<p>Wie im Sport genießt auch bei uns das Fairplay absolute Priorität.</p>
+<p>Pro Person ist nur ein Account erlaubt. Bekannte, Freunde oder die geliebte Familie dürfen natürlich vom selben Internet-Anschluss aus mitspielen.</p>
+<p>Solltest Du aber gemeinsam mit Anderen einen Rechner benutzen, unterliegt dieses Vorgehen einer Auflage, welche das Fairplay gewährleisten und schützen soll:<br>Unter allen diesen Accounts sind jegliche Aktivitäten, die einem der Accounts einen Vorteil verschaffen können, untersagt. Ansonsten genießen diese Accounts selbstverständlich die gleichen Rechte, Pflichten und Spielfunktionen wie die Einzelspieler.</p>
+</div>
+    </div>
+
+{% endblock %}

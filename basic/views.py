@@ -24,7 +24,7 @@ def office_view(request):
     else:
         return HttpResponseRedirect('/login')
     '''
-    return render(request, 'index.html',
+    return render(request, 'office.html',
                   {"username": request.user.id,
                    })
 
