@@ -1,7 +1,7 @@
 <div id="menu">
     <ul id="nav">
         {% if user.is_authenticated %}
-            <li id="current"><a href="#">Office</a>
+            <li {% if request.path == '/' %}id="current"{% endif %}><a href="#">Office</a>
                 <ul>
                     <li><a>Notifications</a></li>
                     <li><a>asd</a></li>
