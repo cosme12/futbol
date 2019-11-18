@@ -101,7 +101,7 @@ blockquote {
 	margin: 10px;
  	padding: 0 0 0 35px;
     border: 1px solid #999;
-  	background: #eee url(quote.png) no-repeat 5px 5px;
+  	background: #eee url(../images/quote.png) no-repeat 5px 5px;
 }
 
 /* form elements */
@@ -160,7 +160,7 @@ form.search input.textbox {
 	color: #333;
 }
 form.search input.button {
-	background: #999 url(headerbg.gif) repeat-x;
+	background: #999 url(../images/headerbg.gif) repeat-x;
 	color: #333;
 	border: none;
 	width: 70px; height: 21px;
@@ -275,7 +275,7 @@ form.search input.button {
 	color: #88ac0b;
 	padding: 5px 0 5px 25px;
 	border-bottom: 1px solid #EFF0F1;
-	background: #FFF url(square-green.png) no-repeat 3px 50%;
+	background: #FFF url(../images/square-green.png) no-repeat 3px 50%;
 }
 
 #main_full {
@@ -289,7 +289,7 @@ form.search input.button {
 	color: #88ac0b;
 	padding: 5px 0 5px 25px;
 	border-bottom: 1px solid #EFF0F1;
-	background: #FFF url(square-green.png) no-repeat 3px 50%;
+	background: #FFF url(../images/square-green.png) no-repeat 3px 50%;
 }
 
 .post-footer {
@@ -299,15 +299,15 @@ form.search input.button {
 	font-size: 95%;
 }
 .post-footer .date {
-	background: url(clock.gif) no-repeat left center;
+	background: url(../images/clock.gif) no-repeat left center;
 	padding-left: 20px; margin: 0 10px 0 5px;
 }
 .post-footer .comments {
-	background: url(comment.gif) no-repeat left center;
+	background: url(../images/comment.gif) no-repeat left center;
 	padding-left: 20px; margin: 0 10px 0 5px;
 }
 .post-footer .readmore {
-	background: url(page.gif) no-repeat left center;
+	background: url(../images/page.gif) no-repeat left center;
 	padding-left: 20px; margin: 0 10px 0 5px;
 }
 
@@ -322,7 +322,7 @@ form.search input.button {
 	padding: 5px 0 5px 10px;
 	font: bold 1.1em Verdana, 'Trebuchet MS', Sans-serif;
 	color: #555;
-	background: #EEF0F1 url(headerbg.gif) repeat-x left bottom;
+	background: #EEF0F1 url(../images/headerbg.gif) repeat-x left bottom;
 	border: 1px solid #EFF0F1;
 }
 #sidebar .left-box {
@@ -337,7 +337,7 @@ form.search input.button {
 }
 #sidebar ul.sidemenu li {
 	border-bottom: 1px solid #EFF0F1;
-	background: url(go.gif) no-repeat 5px 5px;
+	background: url(../images/go.gif) no-repeat 5px 5px;
 	padding: 2px 0 2px 25px;
 	margin: 0 2px;
 }
@@ -564,7 +564,7 @@ div.navBlockLinks {
 div.navBlockLinks a, div.navBlockLinks a:link, div.navBlockLinks a:visited {
 	display: block;
 	border-bottom: 1px solid #eff0f1;
-	background-image: url(go.gif);
+	background-image: url(../images/go.gif);
 	background-repeat: no-repeat;
 	background-position: 5px center;
 	padding: 4px 4px 4px 25px;
@@ -680,7 +680,7 @@ input[type="submit"]:hover, a.button:hover, button:hover {
     max-width: 522px;
     height: 400px;
     margin: 0 auto;
-    background-image: url(fussballfeld.png);
+    background-image: url(../images/fussballfeld.png);
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-size: cover;
