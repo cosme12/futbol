@@ -15,3 +15,4 @@ class HomePageTest(TestCase):
         response = self.client.get('/login/')
         print(response.status_code)
         self.assertTemplateUsed(response, 'registration/login.html')
+
