@@ -4,18 +4,23 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 
-class TodoItem(models.Model):
-    content = models.TextField()
+class Season(models.Model):
+    date = models.DateTimeField(null=True)
+
+
+class League(models.Model):
+    level = models.IntegerField(default=1)
+    id_season = models.ForeignKey(Season, null=True, on_delete=models.SET_NULL)
+    matches_played = models.IntegerField(default=0)
 
 
 class Team(models.Model):
-    #id_league = models.ForeignKey(League, null=True, on_delete=models.SET_NULL)
+    id_league = models.ForeignKey(League, null=True, on_delete=models.SET_NULL)
     name = models.TextField(null=True)
     points = models.IntegerField(default=0)
     strength = models.IntegerField(default=0)
     fans = models.IntegerField(default=0)
     money = models.IntegerField(default=0)
-    formation = models.IntegerField(default=0)
     last_year_place = models.IntegerField(default=0)
     elo = models.IntegerField(default=0)
     last_year_elo = models.IntegerField(default=0)
@@ -30,7 +35,7 @@ class CustomUser(AbstractUser):
     welcomed_message = models.IntegerField(default=0)
     sanctions = models.IntegerField(default=0)
 
-'''
+
 class Notification(models.Model):
     id_user = models.ForeignKey(CustomUser, null=True, on_delete=models.SET_NULL)
     text = models.TextField(null=True)
@@ -57,39 +62,16 @@ class Player(models.Model):
 
 class Formation(models.Model):
     id_team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_player_1 = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
-    id_player_2 = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
-    id_player_3 = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
-    id_player_4 = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
-    id_player_5 = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
-    id_player_6 = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
-    id_player_7 = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
-    id_player_8 = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
-    id_player_9 = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
-    id_player_10 = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
-    id_player_11 = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
+    active = models.IntegerField(default=0)
 
 
-class League(models.Model):
-    level = models.IntegerField(default=1)
-    id_team_1 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_team_2 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_team_3 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_team_4 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_team_5 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_team_6 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_team_7 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_team_8 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_team_9 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_team_10 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_team_11 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    id_team_12 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
+class FormationSetup(models.Model):
+    id_formation = models.ForeignKey(Formation, null=True, on_delete=models.SET_NULL)
+    id_player = models.ForeignKey(Player, null=True, on_delete=models.SET_NULL)
 
 
 class Match(models.Model):
-    #id_season = models.ForeignKey(Season, null=True, on_delete=models.SET_NULL)
-    #id_team_1 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    #id_team_2 = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
+    id_season = models.ForeignKey(Season, null=True, on_delete=models.SET_NULL)
     date = models.DateTimeField(null=True)
     viewers = models.IntegerField(default=0)
     result = models.TextField(null=True)
@@ -104,9 +86,13 @@ class Match(models.Model):
     red_card_2 = models.IntegerField(default=0)
 
 
+class MatchAssignment(models.Model):
+    id_match = models.ForeignKey(Match, null=True, on_delete=models.SET_NULL)
+    id_team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
+
+
 class MatchCommentary(models.Model):
     id_match = models.ForeignKey(Match, null=True, on_delete=models.SET_NULL)
     minute = models.IntegerField(default=0)
     commentary = models.TextField(null=True)
 
-'''
