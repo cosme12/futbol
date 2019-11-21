@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
+from django.db.models import Sum
 from django.db import connection
 
 from .models import Team, Player, Season, League
@@ -24,8 +25,11 @@ def office_view(request):
     '''
     #team = Team.objects.get(id=request.user.id)
     team = Team.objects.filter(id=request.user.id).first()
+    squad_strength = Player.objects.filter(id_team=request.user.id_team).aggregate(Sum('skill_current'))['skill_current__sum']
     return render(request, 'office.html',
                   {"team": team,
+                   "squad_strength": squad_strength,
+                   "squad_strength_image": f"images/bar/{int(squad_strength)}.png",
                    })
 
 
