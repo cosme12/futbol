@@ -9,7 +9,7 @@ from basic.models import CustomUser, League, Team, Player
 
 @admin.register(CustomUser)
 class CustomUserAdmin(admin.ModelAdmin):
-    list_display = ['username', 'email', 'team_id', 'last_login']
+    list_display = ['username', 'email', 'id_team', 'last_login']
     #list_filter = ('position', )
     #fields = [('name', 'surname'), ]  # when editting
 

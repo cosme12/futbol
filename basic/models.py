@@ -63,7 +63,7 @@ class Team(models.Model):
 
 
 class CustomUser(AbstractUser):
-    team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
+    id_team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
     cheated = models.IntegerField(default=0)
     info_text = models.TextField(null=True)
     accepted_rules = models.IntegerField(default=0)
