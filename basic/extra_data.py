@@ -107,3 +107,25 @@ SURNAMES = [
     'ramirez'
 ]
 
+TEAM_NAMES = [
+    'Boca',
+    'Argentinos',
+    'River Plate',
+    'Gimnasia',
+    'Estudiantes',
+    'River',
+    'Racing',
+    'San Lorenzo',
+    'Barcelona',
+    'Real Madrid',
+    'Independiente',
+    'Rafaela',
+    'Sacachispas',
+    'Rosario Central',
+    'Banfield',
+    'Colon',
+    'Huracan',
+    'Lanus',
+    'Newells',
+    'Talleres',
+]
