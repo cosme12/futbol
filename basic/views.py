@@ -6,8 +6,9 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
+from django.db import connection
 
-from .models import Team, Player
+from .models import Team, Player, Season, League
 from .forms import LoginForm
 
 # Create your views here.
@@ -29,7 +30,11 @@ def office_view(request):
 
 
 def create_players(request):
-    Player.create_players(2)
+    #Player.create_players(10, 'D')
+    #Season.create_season()
+    #League.create_leagues([1, 2, 2, 2])
+    Team.create_teams(15)
+    #print(connection.queries)
     return HttpResponseRedirect('/')
 
 
