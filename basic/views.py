@@ -30,11 +30,20 @@ def office_view(request):
 
 
 def create_players(request):
-    #Player.create_players(10, 'D')
+    #League.objects.all().delete()
+
+    for i in range(48):
+        Team.create_teams(1)
+        Player.create_players(2, 'A')
+        Player.create_players(5, 'D')
+        Player.create_players(5, 'M')
+        Player.create_players(3, 'O')
     #Season.create_season()
-    #League.create_leagues([1, 2, 2, 2])
-    Team.create_teams(15)
+    League.create_leagues([1, 2, 2, 2])
+    #
     #print(connection.queries)
+    Player.assign_player_to_team()
+    Team.assign_team_to_league()
     return HttpResponseRedirect('/')
 
 

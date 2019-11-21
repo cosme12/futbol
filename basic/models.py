@@ -34,7 +34,7 @@ class League(models.Model):
 
 class Team(models.Model):
     id_league = models.ForeignKey(League, null=True, on_delete=models.SET_NULL)
-    name = models.TextField(null=True)
+    name = models.TextField()
     points = models.IntegerField(default=0)
     strength = models.IntegerField(default=0)
     fans = models.IntegerField(default=0)
@@ -81,7 +81,7 @@ class Notification(models.Model):
 
 class Player(models.Model):
     id_team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
-    name = models.TextField(null=True)
+    name = models.TextField()
     surname = models.TextField(null=True)
     position = models.TextField(null=True)
     age = models.IntegerField(default=18)
@@ -108,6 +108,17 @@ class Player(models.Model):
             new_player = Player(name=name.capitalize(), surname=surname.capitalize(), position=position,
                                 skill_current=skill_current, skill_max=skill_max, salary=salary)
             new_player.save()
+
+    @staticmethod
+    def assign_player_to_team():
+        players_no_team = Player.objects.filter(id_team=None)
+        all_teams = Team.objects.filter()
+        for player in players_no_team:
+            for team in all_teams:
+                if Player.objects.filter(id_team=team.id).count() < 15:
+                    player.id_team = team
+                    player.save()
+                    break
 
 
 class Formation(models.Model):
