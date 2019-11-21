@@ -7,7 +7,7 @@ from django.views import generic
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 
-from .models import Team
+from .models import Team, Player
 from .forms import LoginForm
 
 # Create your views here.
@@ -28,9 +28,13 @@ def office_view(request):
                    })
 
 
+def create_players(request):
+    Player.create_players(2)
+    return HttpResponseRedirect('/')
+
+
 class SignUp(generic.CreateView):
     User = get_user_model()
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
-

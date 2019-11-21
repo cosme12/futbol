@@ -1,5 +1,8 @@
+import random
+
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from .extra_data import NAMES
 
 # Create your models here.
 
@@ -48,8 +51,8 @@ class Player(models.Model):
     name = models.TextField(null=True)
     surname = models.TextField(null=True)
     position = models.TextField(null=True)
-    age = models.IntegerField(default=0)
-    freshness = models.IntegerField(default=0)
+    age = models.IntegerField(default=18)
+    freshness = models.IntegerField(default=100)
     games_played_club = models.IntegerField(default=0)
     games_played_total = models.IntegerField(default=0)
     skill_current = models.FloatField(default=0)
@@ -57,7 +60,14 @@ class Player(models.Model):
     market_value = models.FloatField(default=0)
     salary = models.FloatField(default=0)
     last_improvement = models.DateTimeField(null=True)
-    moral = models.FloatField(default=0)
+    moral = models.FloatField(default=100)
+
+    @staticmethod
+    def create_players(n_players):
+        names = random.sample(NAMES, n_players)
+        for name in names:
+            new_item = Player(name=name.capitalize(), surname='Perez', position='D', age=18, )
+            new_item.save()
 
 
 class Formation(models.Model):
