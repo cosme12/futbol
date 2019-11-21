@@ -49,6 +49,9 @@ class Team(models.Model):
         for name in names:
             new_team = Team(name=name)
             new_team.save()
+
+    @staticmethod
+    def assign_team_to_league():
         teams_no_league = Team.objects.filter(id_league=None)
         all_leagues = League.objects.filter()
         for team in teams_no_league:
